@@ -20,6 +20,8 @@ if [ "$PANEL" == "1000G" ]; then
         wget -q https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr${CHR}.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz
         wget -q https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr${CHR}.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz.tbi
     done
+    wget -q -O ALL.chr23.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chrX.phase3_shapeit2_mvncall_integrated_v1c.20130502.genotypes.vcf.gz
+    wget -q -O ALL.chr23.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz.tbi https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chrX.phase3_shapeit2_mvncall_integrated_v1c.20130502.genotypes.vcf.gz.tbi
 
     echo "Extracting allele frequencies (1000G, POP=$POP)..."
     python3 ../extract_AF_1000G.py "$POP" . "$OUTFILE"
