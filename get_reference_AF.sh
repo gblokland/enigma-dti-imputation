@@ -33,7 +33,7 @@ fi
 ############################################
 if [ "$PANEL" == "HRC" ]; then
     echo "Downloading HRC sites table (GRCh37)"
-    wget -q https://www.well.ox.ac.uk/~wrayner/strand/HRC.r1-1.GRCh37.wgs.mac5.sites.tab.gz
+    wget -q ftp://ngs.sanger.ac.uk/production/hrc/HRC.r1-1/HRC.r1-1.GRCh37.wgs.mac5.sites.tab.gz
 
     echo "Extracting allele frequencies using R..."
     Rscript ../extract_AF_HRC.R HRC.r1-1.GRCh37.wgs.mac5.sites.tab.gz "$OUTFILE"
